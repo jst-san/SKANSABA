@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { Inter } from "next/font/google";
+import "./global.css";
 
 export const metadata: Metadata = { title: "SMKN 1 Bantul" };
 
@@ -27,7 +28,9 @@ export default function RootLayout({
 }) {
   return (
     <html className={` ${inter.className}`} lang="id-ID">
-      <body className="">{children}</body>
+      <body className="">
+        {children}
+        </body>
     </html>
   );
 }
