@@ -24,7 +24,7 @@ export default function Hero({ onOpenVideo }: { onOpenVideo: () => void }): Reac
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-8">
             SMKN 1 Bantul menerapkan pembelajaran berbasis industri, penguatan
             Profil Pelajar Pancasila, dan teknologi digital terdepan untuk
-            menyiapkan Lusan Siap Kerja, Wirausaha, dan Studi Lanjut (BMW).
+            menyiapkan Lulusan Siap Kerja, Wirausaha, dan Studi Lanjut (BMW).
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -32,7 +32,7 @@ export default function Hero({ onOpenVideo }: { onOpenVideo: () => void }): Reac
               href="#jurusan"
               className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-semibold shadow-md shadow-sky-500/10 hover:shadow-lg transition-all flex items-center justify-center gap-2"
             >
-              <span>Jelajahi 7 Jurusan</span>
+              <span>Jelajahi 8 Jurusan</span>
               <LuArrowRight className="w-4 h-4" />
             </a>
 
@@ -49,7 +49,7 @@ export default function Hero({ onOpenVideo }: { onOpenVideo: () => void }): Reac
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 pt-6">
-          <div className="bg-white border border-slate-200/80 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-white border border-slate-100 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
             <div className="w-10 h-10 rounded-xl bg-sky-100 border border-blue-100 flex items-center justify-center mb-3 text-sky-500">
               <LuBookOpen className="w-5 h-5" />
             </div>
@@ -61,7 +61,7 @@ export default function Hero({ onOpenVideo }: { onOpenVideo: () => void }): Reac
             </div>
           </div>
 
-          <div className="bg-white border border-slate-200/80 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-white border border-slate-100 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
             <div className="w-10 h-10 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center mb-3 text-amber-700">
               <LuBuilding2 className="w-5 h-5" />
             </div>
@@ -73,7 +73,7 @@ export default function Hero({ onOpenVideo }: { onOpenVideo: () => void }): Reac
             </div>
           </div>
 
-          <div className="bg-white border border-slate-200/80 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-white border border-slate-100 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
             <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center mb-3 text-emerald-700">
               <LuUsers className="w-5 h-5" />
             </div>
@@ -85,7 +85,7 @@ export default function Hero({ onOpenVideo }: { onOpenVideo: () => void }): Reac
             </div>
           </div>
 
-          <div className="bg-white border border-slate-200/80 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-white border border-slate-100 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
             <div className="w-10 h-10 rounded-xl bg-purple-50 border border-purple-100 flex items-center justify-center mb-3 text-purple-700">
               <LuAward className="w-5 h-5" />
             </div>

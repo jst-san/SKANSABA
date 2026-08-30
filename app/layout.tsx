@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./global.css";
+import Navbar from "./components/Navbar";
 
 export const metadata: Metadata = { title: "SMKN 1 Bantul" };
 
@@ -27,10 +28,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html className={` ${inter.className}`} lang="id-ID">
-      <body className="">
-        {children}
-        </body>
+    <html
+      className={`text-slate-800 antialiased ${inter.className}`}
+      lang="id-ID"
+    >
+      <body className="min-h-screen bg-[#fafafa] selection:bg-sky-600 selection:text-white">
+        <Navbar />
+        {children}</body>
     </html>
   );
 }

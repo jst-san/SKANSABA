@@ -6,7 +6,7 @@ export default function PrestasiSection(): React.ReactElement {
   return (
     <section
       id="prestasi"
-      className="py-24 bg-white border-t border-slate-200/80"
+      className="py-24 bg-white border-t border-slate-100"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center mb-12">
@@ -25,7 +25,7 @@ export default function PrestasiSection(): React.ReactElement {
           {PRESTASI_DATA.map((item) => (
             <div
               key={item.id}
-              className="bg-white border border-slate-200/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between group"
+              className="bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between group"
             >
               <div>
                 <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">

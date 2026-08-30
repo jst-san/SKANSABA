@@ -28,7 +28,7 @@ export default function Footer(): React.ReactElement {
 
             <p className="text-xs leading-relaxed text-slate-200 max-w-sm">
               Mewujudkan lembaga pendidikan kejuruan yang berintegritas,
-              berteknologi tinggi, serta mencetak Lusan kompeten yang
+              berteknologi tinggi, serta mencetak Lulusan kompeten yang
               berkarakter Profil Pelajar Pancasila.
             </p>
 

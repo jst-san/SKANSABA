@@ -32,7 +32,7 @@ export default function MajorDetailModal({ jurusan, onClose }: { jurusan: Jurusa
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="bg-slate-50 rounded-xl p-4 border border-slate-200/80">
+            <div className="bg-slate-50 rounded-xl p-4 border border-slate-100">
               <h5 className="text-xs font-bold text-sky-600 uppercase tracking-wider mb-3 flex items-center gap-1.5"><LuSparkles className="w-3.5 h-3.5 text-sky-600" />Kompetensi Keahlian</h5>
               <ul className="space-y-2">
                 {jurusan.keahlian.map((k, i) => (
@@ -41,7 +41,7 @@ export default function MajorDetailModal({ jurusan, onClose }: { jurusan: Jurusa
               </ul>
             </div>
 
-            <div className="bg-slate-50 rounded-xl p-4 border border-slate-200/80">
+            <div className="bg-slate-50 rounded-xl p-4 border border-slate-100">
               <h5 className="text-xs font-bold text-amber-800 uppercase tracking-wider mb-3 flex items-center gap-1.5"><LuBuilding2 className="w-3.5 h-3.5 text-amber-600" />Fasilitas Praktik &amp; Lab</h5>
               <ul className="space-y-2">
                 {jurusan.fasilitas.map((f, i) => (
@@ -52,7 +52,7 @@ export default function MajorDetailModal({ jurusan, onClose }: { jurusan: Jurusa
           </div>
 
           <div>
-            <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Prospek Karir Lusan</h4>
+            <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Prospek Karir Lulusan</h4>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
               {jurusan.prospek.map((p, i) => (
                 <div key={i} className="p-2.5 rounded-lg bg-sky-100/60 border border-sky-100 text-center">

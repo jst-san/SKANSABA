@@ -28,7 +28,7 @@ export default function JurusanSection({ onSelectJurusan }: { onSelectJurusan: (
           {filteredJurusan.map((item) => {
             const IconComponent = item.icon;
             return (
-              <div key={item.id} className="bg-white border border-slate-200/80 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+              <div key={item.id} className="bg-white border border-slate-100 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <div className={`p-3 rounded-xl border ${item.iconBg} group-hover:scale-105 transition-transform`}>
@@ -51,7 +51,7 @@ export default function JurusanSection({ onSelectJurusan }: { onSelectJurusan: (
                     </div>
                   </div>
 
-                  <button onClick={() => onSelectJurusan(item)} className="w-full py-2.5 px-4 rounded-xl bg-slate-50 hover:bg-sky-500 text-slate-700 hover:text-white text-xs font-bold transition-colors flex items-center justify-center gap-2 group/btn border border-slate-200/80 hover:border-sky-500">
+                  <button onClick={() => onSelectJurusan(item)} className="w-full py-2.5 px-4 rounded-xl bg-slate-50 hover:bg-sky-500 text-slate-700 hover:text-white text-xs font-bold transition-colors flex items-center justify-center gap-2 group/btn border border-slate-100 hover:border-sky-500">
                     <span>Detail &amp; Prospek Kerja</span>
                     <LuChevronRight className="w-4 h-4 text-slate-400 group-hover/btn:text-white group-hover/btn:translate-x-1 transition-all" />
                   </button>

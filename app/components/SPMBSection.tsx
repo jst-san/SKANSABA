@@ -11,7 +11,7 @@ export default function SPMBSection(): React.ReactElement {
   return (
     <section
       id="spmb"
-      className="py-24 bg-gradient-to-b from-sky-50/50 to-slate-50 border-t border-slate-200/80"
+      className="py-24 bg-gradient-to-b from-sky-50/50 to-slate-50 border-t border-slate-100"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
@@ -21,7 +21,7 @@ export default function SPMBSection(): React.ReactElement {
               "url('https://upload.wikimedia.org/wikipedia/commons/b/b6/Front_view_of_SMKN_1_Bantul.jpg')",
           }}
         >
-            <div className="w-full h-full bg-black/25 absolute inset-0"></div>
+          <div className="w-full h-full bg-black/25 absolute inset-0"></div>
           <div className="max-w-2xl relative z-10">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400 text-amber-950 text-xs font-bold mb-4 shadow-sm">
               Penerimaan Murid Baru T.A. 2026/2027
@@ -62,7 +62,7 @@ export default function SPMBSection(): React.ReactElement {
           {SPMB_STEPS.map((step, idx) => (
             <div
               key={idx}
-              className="bg-white border border-slate-200/80 rounded-2xl p-6 relative flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow group"
+              className="bg-white border border-slate-100 rounded-2xl p-6 relative flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow group"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">

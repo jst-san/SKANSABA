@@ -20,7 +20,7 @@ export default function SambutanPrincipal(): React.ReactElement {
   return (
     <section
       id="profil"
-      className="py-20 bg-white border-y border-slate-200/80 relative"
+      className="py-20 bg-white border-y border-slate-100 relative"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-slate-50 border border-blue-100 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-sm">
@@ -114,7 +114,7 @@ export default function SambutanPrincipal(): React.ReactElement {
                 </button>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-slate-200/80">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-slate-100">
                 <div className="flex items-start gap-3">
                   <div className="p-2 rounded-lg bg-amber-100 text-amber-800 mt-0.5">
                     <LuShieldCheck className="w-4 h-4" />
