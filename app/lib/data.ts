@@ -49,6 +49,19 @@ export interface Step {
   desc: string;
 }
 
+export interface Berita {
+  id: string;
+  title: string;
+  slug: string;
+  category: string;
+  date: string;
+  author: string;
+  excerpt: string;
+  imageUrl: string;
+  url: string;
+}
+
+
 export const JURUSAN_DATA: Jurusan[] = [
   {
     id: "rpl",
@@ -350,3 +363,95 @@ export const SPMB_STEPS: Step[] = [
 ];
 
 export const SCHOOL_ADDRESS = `Jl. Parangtritis KM 11, Dukuh, Sabdodadi, Kec. Bantul, Kab. Bantul, D.I. Yogyakarta 55715`;
+
+export const BERITA_DATA:Berita[] = [
+  {
+    id: "mou-bnet-2026",
+    title:
+      "SMKN 1 Bantul Perkuat Kemitraan Industri melalui Penandatanganan MoU dengan Bnet",
+    slug: "smkn-1-bantul-perkuat-kemitraan-industri-mou-bnet",
+    category: "Kerjasama Industri",
+    date: "22 Agustus 2026",
+    author: "Tim Publikasi SMKN 1 Bantul",
+    excerpt:
+      "Upaya peningkatan kompetensi siswa vokasi dan sinkronisasi kurikulum industri jaringan secara resmi diperkuat melalui penandatanganan nota kesepahaman (MoU) bersama Bnet.",
+    imageUrl: "https://smkn1bantul.sch.id/assets/images/berita/mou-bnet.jpg",
+    url: "https://smkn1bantul.sch.id",
+  },
+  {
+    id: "pengumuman-spmb-2026",
+    title: "Pengumuman Resmi dan Prosedur Daftar Ulang SPMB T.A. 2026/2027",
+    slug: "pengumuman-dan-daftar-ulang-spmb-2026-2027",
+    category: "Pengumuman",
+    date: "25 Juni 2026",
+    author: "Panitia SPMB",
+    excerpt:
+      "Informasi resmi penetapan hasil seleksi penerimaan murid baru serta kelengkapan berkas registrasi ulang bagi calon siswa yang dinyatakan diterima di SMKN 1 Bantul.",
+    imageUrl: "https://smkn1bantul.sch.id/assets/images/berita/spmb-2026.jpg",
+    url: "https://smkn1bantul.sch.id",
+  },
+  {
+    id: "selamat-siswa-baru-2026",
+    title:
+      "Selamat Datang! SMKN 1 Bantul Resmi Menerima 576 Siswa Baru T.A. 2026/2027",
+    slug: "selamat-untuk-576-siswa-baru-smkn-1-bantul",
+    category: "Kesiswaan",
+    date: "20 Juni 2026",
+    author: "SMKN 1 Bantul",
+    excerpt:
+      "Sebanyak 576 peserta didik baru terpilih dari 7 program keahlian resmi disambut dalam pembukaan kegiatan Masa Pengenalan Lingkungan Sekolah (MPLS).",
+    imageUrl: "https://smkn1bantul.sch.id/assets/images/berita/siswa-baru.jpg",
+    url: "https://smkn1bantul.sch.id",
+  },
+  {
+    id: "snbp-2026",
+    title: "Apresiasi Kelulusan Siswa SMKN 1 Bantul dalam Jalur SNBP 2026",
+    slug: "snbp-2026-smkn-1-bantul",
+    category: "Prestasi",
+    date: "15 Mei 2026",
+    author: "Tim BKK & Konseling",
+    excerpt:
+      "Puluhan siswa lulusan SMKN 1 Bantul berhasil diterima di berbagai Perguruan Tinggi Negeri (PTN) favorit melalui jalur Seleksi Nasional Berdasarkan Prestasi (SNBP).",
+    imageUrl: "https://smkn1bantul.sch.id/assets/images/berita/snbp-2026.jpg",
+    url: "https://smkn1bantul.sch.id",
+  },
+  {
+    id: "tim-publikasi-2026",
+    title: "Pelatihan Jurnalistik dan Penguatan Tim Publikasi SMKN 1 Bantul",
+    slug: "tim-publikasi-smkn-1-bantul",
+    category: "Kegiatan Sekolah",
+    date: "10 Mei 2026",
+    author: "Humas SMKN 1 Bantul",
+    excerpt:
+      "Tim Kreatif dan Publikasi Sekolah mengikuti pembekalan produksi konten digital dan pengelolaan media komunikasi publik untuk mendukung branding keahlian vokasi.",
+    imageUrl: "https://smkn1bantul.sch.id/assets/images/berita/publikasi.jpg",
+    url: "https://smkn1bantul.sch.id",
+  },
+  {
+    id: "medallion-lks-2024",
+    title:
+      "Muhammad Eksa Arifa Meraih Medallion For Excellence LKS Nasional Bidang Web Technologies",
+    slug: "medallion-for-excellence-lks-nasional-web-technologies",
+    category: "Prestasi",
+    date: "12 April 2026",
+    author: "SMKN 1 Bantul",
+    excerpt:
+      "Siswa jurusan Rekayasa Perangkat Lunak (RPL) membanggakan sekolah dengan meraih penghargaan Medallion for Excellence pada ajang LKS Tingkat Nasional.",
+    imageUrl:
+      "https://smkn1bantul.sch.id/assets/images/berita/lks-nasional.jpg",
+    url: "https://smkn1bantul.sch.id",
+  },
+  {
+    id: "juara-fiksi-diy",
+    title:
+      "Tim SMKN 1 Bantul Raih Juara 1 Festival Inovasi Kewirausahaan Siswa Indonesia (FIKSI) DIY",
+    slug: "juara-1-fiksi-diy-kewirausahaan",
+    category: "Prestasi",
+    date: "02 Maret 2026",
+    author: "Tim Kewirausahaan",
+    excerpt:
+      "Haryo Djati R dan Anggara Deni A sukses menyabet Juara 1 Kewirausahaan Siswa tingkat D.I. Yogyakarta melalui inovasi produk bisnis kreatif.",
+    imageUrl: "https://smkn1bantul.sch.id/assets/images/berita/fiksi-diy.jpg",
+    url: "https://smkn1bantul.sch.id",
+  },
+];
