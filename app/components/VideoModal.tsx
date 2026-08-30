@@ -9,7 +9,7 @@ export default function VideoModal({ isOpen, onClose }: { isOpen: boolean; onClo
       <div className="relative w-full max-w-3xl bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-200">
         <div className="flex items-center justify-between p-4 border-b border-slate-100 bg-slate-50">
           <div className="flex items-center gap-2">
-            <LuPlay className="w-5 h-5 text-blue-700 fill-blue-700" />
+            <LuPlay className="w-5 h-5 text-sky-500 fill-sky-500" />
             <h3 className="font-bold text-slate-800 text-sm sm:text-base">Video Profil SMKN 1 Bantul</h3>
           </div>
           <button onClick={onClose} className="p-1 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-200/60 transition-colors">
@@ -17,7 +17,7 @@ export default function VideoModal({ isOpen, onClose }: { isOpen: boolean; onClo
           </button>
         </div>
         <div className="aspect-video w-full bg-slate-900 flex flex-col items-center justify-center p-6 text-center text-white">
-          <div className="w-16 h-16 rounded-full bg-blue-600/30 border border-blue-400/40 flex items-center justify-center mb-4 backdrop-blur-md">
+          <div className="w-16 h-16 rounded-full bg-sky-600/30 border border-blue-400/40 flex items-center justify-center mb-4 backdrop-blur-md">
             <LuPlay className="w-8 h-8 text-white fill-white ml-1" />
           </div>
           <h4 className="text-xl font-bold mb-2">Simulasi LuPlayer Video Profil</h4>

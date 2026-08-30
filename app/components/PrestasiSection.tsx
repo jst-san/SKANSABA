@@ -44,12 +44,12 @@ export default function PrestasiSection(): React.ReactElement {
                 </div>
 
                 <div className="p-6">
-                  <div className="flex items-center gap-1.5 text-xs text-blue-700 font-bold mb-2">
-                    <LuStar className="w-3.5 h-3.5 fill-blue-700 text-blue-700" />
+                  <div className="flex items-center gap-1.5 text-xs text-sky-500 font-bold mb-2">
+                    <LuStar className="w-3.5 h-3.5 fill-sky-500 text-sky-500" />
                     <span>{item.winner}</span>
                   </div>
 
-                  <h3 className="text-base font-extrabold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors">
+                  <h3 className="text-base font-extrabold text-slate-900 mb-2 group-hover:text-sky-500 transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-slate-600 text-xs leading-relaxed">
@@ -60,7 +60,7 @@ export default function PrestasiSection(): React.ReactElement {
 
               <div className="px-6 pb-6 pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
                 <span>Tahun Rilis: {item.year}</span>
-                <span className="text-blue-700 font-bold">{item.category}</span>
+                <span className="text-sky-500 font-bold">{item.category}</span>
               </div>
             </div>
           ))}

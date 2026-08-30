@@ -15,7 +15,7 @@ export default function SPMBSection(): React.ReactElement {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          className="bg-gradient-to-r from-blue-700 via-blue-800 to-indigo-900 bg-center rounded-3xl p-8 sm:p-12 mb-16 text-white shadow-xl relative overflow-hidden"
+          className="bg-gradient-to-r from-sky-500 via-sky-600 to-indigo-900 bg-center rounded-3xl p-8 sm:p-12 mb-16 text-white shadow-xl relative overflow-hidden"
           style={{
             backgroundImage:
               "url('https://upload.wikimedia.org/wikipedia/commons/b/b6/Front_view_of_SMKN_1_Bantul.jpg')",
@@ -66,7 +66,7 @@ export default function SPMBSection(): React.ReactElement {
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-3xl font-black text-blue-700">
+                  <span className="text-3xl font-black text-sky-500">
                     {step.step}
                   </span>
                   <div className="flex items-center gap-1 text-[11px] text-amber-800 font-bold bg-amber-100 px-2.5 py-1 rounded-full border border-amber-200">
@@ -74,7 +74,7 @@ export default function SPMBSection(): React.ReactElement {
                     <span>{step.date}</span>
                   </div>
                 </div>
-                <h4 className="text-base font-bold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors">
+                <h4 className="text-base font-bold text-slate-900 mb-2 group-hover:text-sky-500 transition-colors">
                   {step.title}
                 </h4>
                 <p className="text-slate-600 text-xs leading-relaxed">
@@ -85,7 +85,7 @@ export default function SPMBSection(): React.ReactElement {
                 <span className="text-[11px] font-semibold text-slate-400">
                   Status Tahapan
                 </span>
-                <LuCircleCheckBig className="w-4 h-4 text-blue-700" />
+                <LuCircleCheckBig className="w-4 h-4 text-sky-500" />
               </div>
             </div>
           ))}

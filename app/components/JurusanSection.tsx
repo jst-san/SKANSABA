@@ -13,14 +13,14 @@ export default function JurusanSection({ onSelectJurusan }: { onSelectJurusan: (
     <section id="jurusan" className="py-24 bg-slate-50 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-blue-100 text-blue-800 text-xs font-bold mb-3">Program Keahlian</div>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-sky-100 text-sky-600 text-xs font-bold mb-3">Program Keahlian</div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">8 Jurusan Spesialisasi Berstandar Industri</h2>
           <p className="text-slate-600 text-sm sm:text-base mt-3">Pilihlah keahlian masa depanmu sesuai minat dan potensi terbaikmu.</p>
 
           <div className="flex items-center justify-center gap-1.5 mt-8 p-1.5 bg-white border border-slate-200 rounded-xl mx-auto shadow-sm">
-            <button onClick={() => setActiveTab("all")} className={`flex-1 p-3 rounded-lg text-xs font-bold transition-all ${activeTab === "all" ? "bg-blue-700 text-white shadow-sm" : "text-slate-600 hover:text-slate-900"}`}>Semua (7)</button>
-            <button onClick={() => setActiveTab("ti")} className={`flex-1 p-3 rounded-lg text-xs font-bold transition-all ${activeTab === "ti" ? "bg-blue-700 text-white shadow-sm" : "text-slate-600 hover:text-slate-900"}`}>Teknologi &amp; Komputer</button>
-            <button onClick={() => setActiveTab("bisnis")} className={`flex-1 p-3 rounded-lg text-xs font-bold transition-all ${activeTab === "bisnis" ? "bg-blue-700 text-white shadow-sm" : "text-slate-600 hover:text-slate-900"}`}>Bisnis &amp; Manajemen</button>
+            <button onClick={() => setActiveTab("all")} className={`flex-1 p-3 rounded-lg text-xs font-bold transition-all ${activeTab === "all" ? "bg-sky-500 text-white shadow-sm" : "text-slate-600 hover:text-slate-900"}`}>Semua (7)</button>
+            <button onClick={() => setActiveTab("ti")} className={`flex-1 p-3 rounded-lg text-xs font-bold transition-all ${activeTab === "ti" ? "bg-sky-500 text-white shadow-sm" : "text-slate-600 hover:text-slate-900"}`}>Teknologi &amp; Komputer</button>
+            <button onClick={() => setActiveTab("bisnis")} className={`flex-1 p-3 rounded-lg text-xs font-bold transition-all ${activeTab === "bisnis" ? "bg-sky-500 text-white shadow-sm" : "text-slate-600 hover:text-slate-900"}`}>Bisnis &amp; Manajemen</button>
           </div>
         </div>
 
@@ -37,7 +37,7 @@ export default function JurusanSection({ onSelectJurusan }: { onSelectJurusan: (
                     <span className={`text-xs font-bold px-2.5 py-1 rounded-full border ${item.badgeColor}`}>{item.shortCode}</span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors">{item.name}</h3>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-sky-500 transition-colors">{item.name}</h3>
                   <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6 line-clamp-3">{item.desc}</p>
                 </div>
 
@@ -51,7 +51,7 @@ export default function JurusanSection({ onSelectJurusan }: { onSelectJurusan: (
                     </div>
                   </div>
 
-                  <button onClick={() => onSelectJurusan(item)} className="w-full py-2.5 px-4 rounded-xl bg-slate-50 hover:bg-blue-700 text-slate-700 hover:text-white text-xs font-bold transition-colors flex items-center justify-center gap-2 group/btn border border-slate-200/80 hover:border-blue-700">
+                  <button onClick={() => onSelectJurusan(item)} className="w-full py-2.5 px-4 rounded-xl bg-slate-50 hover:bg-sky-500 text-slate-700 hover:text-white text-xs font-bold transition-colors flex items-center justify-center gap-2 group/btn border border-slate-200/80 hover:border-sky-500">
                     <span>Detail &amp; Prospek Kerja</span>
                     <LuChevronRight className="w-4 h-4 text-slate-400 group-hover/btn:text-white group-hover/btn:translate-x-1 transition-all" />
                   </button>

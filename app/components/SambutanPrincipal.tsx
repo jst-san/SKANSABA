@@ -39,7 +39,7 @@ export default function SambutanPrincipal(): React.ReactElement {
                     <h3 className="font-bold text-slate-900 text-base">
                       Raharjo, S.IP, M.Pd
                     </h3>
-                    <p className="text-blue-700 text-xs font-semibold">
+                    <p className="text-sky-500 text-xs font-semibold">
                       Kepala SMKN 1 Bantul
                     </p>
                   </div>
@@ -48,7 +48,7 @@ export default function SambutanPrincipal(): React.ReactElement {
             </div>
 
             <div className="lg:col-span-7 space-y-5">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-100 text-blue-800 text-xs font-bold">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-sky-100 text-sky-600 text-xs font-bold">
                 Sambutan Kepala Sekolah
               </div>
 
@@ -107,7 +107,7 @@ export default function SambutanPrincipal(): React.ReactElement {
               <div className="pt-3">
                 <button
                   onClick={() => setExpanded((s) => !s)}
-                  className="text-sm font-semibold text-blue-700 hover:underline"
+                  className="text-sm font-semibold text-sky-500 hover:underline"
                   aria-expanded={expanded}
                 >
                   {expanded ? "Lebih Sedikit" : "Selengkapnya"}
@@ -130,7 +130,7 @@ export default function SambutanPrincipal(): React.ReactElement {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="p-2 rounded-lg bg-blue-100 text-blue-800 mt-0.5">
+                  <div className="p-2 rounded-lg bg-sky-100 text-sky-600 mt-0.5">
                     <LuZap className="w-4 h-4" />
                   </div>
                   <div>

@@ -20,7 +20,7 @@ export default function App(): React.ReactElement {
   const [isVideoOpen, setIsVideoOpen] = useState<boolean>(false);
 
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-800 antialiased selection:bg-blue-600 selection:text-white">
+    <div className="min-h-screen bg-white font-sans text-slate-800 antialiased selection:bg-sky-600 selection:text-white">
       <Navbar />
 
       <main>
