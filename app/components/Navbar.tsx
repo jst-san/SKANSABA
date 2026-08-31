@@ -122,7 +122,7 @@ export default function Navbar(): React.ReactElement {
     >
       <div className="max-w-7xl h-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="h-full flex items-center justify-between">
-          <a href="#" className="flex items-center gap-3 group">
+          <a href="/" className="flex items-center gap-3 group">
             <img className="w-10 h-10" src="/images/smkn1bantul_logo.png" />
             <div>
               <div className="flex items-center gap-1.5">

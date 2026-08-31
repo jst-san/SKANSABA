@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { LuShieldCheck, LuZap } from "react-icons/lu";
+import { motion } from "framer-motion";
 
 export default function SambutanPrincipal(): React.ReactElement {
   const [expanded, setExpanded] = useState(false);
@@ -25,7 +26,14 @@ export default function SambutanPrincipal(): React.ReactElement {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-slate-50 border border-blue-100 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-            <div className="lg:col-span-5 flex justify-center">
+            {/* Foto Kepala Sekolah */}
+            <motion.div
+              className="lg:col-span-5 flex justify-center"
+              initial={{ opacity: 0, translateY: 10 }}
+              whileInView={{ opacity: 1, translateY: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ ease: "easeInOut" }}
+            >
               <div className="relative w-full max-w-sm">
                 <div className="overflow-hidden rounded-2xl bg-white p-2 border border-slate-200 shadow-md">
                   <div className="aspect-[4/5] rounded-xl overflow-hidden relative">
@@ -45,19 +53,35 @@ export default function SambutanPrincipal(): React.ReactElement {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
+            {/* Konten Sambutan */}
             <div className="lg:col-span-7 space-y-5">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-sky-100 text-sky-600 text-xs font-bold">
+              {/* Badge */}
+              <motion.div
+                className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-sky-100 text-sky-600 text-xs font-bold"
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ ease: "easeInOut", delay: 0.1, duration: 0.5 }}
+              >
                 Sambutan Kepala Sekolah
-              </div>
+              </motion.div>
 
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-snug">
+              {/* Judul Utama */}
+              <motion.h2
+                className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-snug"
+                initial={{ opacity: 0, translateY: 10 }}
+                whileInView={{ opacity: 1, translateY: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ ease: "easeInOut", delay: 0.1 }}
+              >
                 &ldquo;Memanusiakan Hubungan, Memahami Konsep, &amp; Membangun
                 Keberlanjutan&rdquo;
-              </h2>
+              </motion.h2>
 
-              <div
+              {/* Paragraf Sambutan */}
+              <motion.div
                 ref={contentRef}
                 style={{
                   maxHeight: maxH,
@@ -65,6 +89,10 @@ export default function SambutanPrincipal(): React.ReactElement {
                   transition: "max-height 300ms ease",
                 }}
                 className="space-y-2 text-slate-600 relative"
+                initial={{ opacity: 0, translateY: 10 }}
+                whileInView={{ opacity: 1, translateY: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ ease: "easeInOut", delay: 0.2 }}
               >
                 <p>
                   Assalamualaikum warahmatullahi wabarakatuh, Salam sejahtera
@@ -101,10 +129,19 @@ export default function SambutanPrincipal(): React.ReactElement {
                   Wassalamualaikum warahmatullahi wabarakatuh.
                 </p>
 
-                {!expanded && <div className="w-full h-16 bg-gradient-to-b via-slate-50 to-slate-50 absolute bottom-0 left-0"></div>}
-              </div>
+                {!expanded && (
+                  <div className="w-full h-16 bg-gradient-to-b via-slate-50 to-slate-50 absolute bottom-0 left-0"></div>
+                )}
+              </motion.div>
 
-              <div className="pt-3">
+              {/* Tombol Expand */}
+              <motion.div
+                className="pt-3"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ ease: "easeInOut", delay: 0.3 }}
+              >
                 <button
                   onClick={() => setExpanded((s) => !s)}
                   className="text-sm font-semibold text-sky-500 hover:underline"
@@ -112,10 +149,17 @@ export default function SambutanPrincipal(): React.ReactElement {
                 >
                   {expanded ? "Lebih Sedikit" : "Selengkapnya"}
                 </button>
-              </div>
+              </motion.div>
 
+              {/* Point Highlights */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-slate-100">
-                <div className="flex items-start gap-3">
+                <motion.div
+                  className="flex items-start gap-3"
+                  initial={{ opacity: 0, translateY: 10 }}
+                  whileInView={{ opacity: 1, translateY: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ ease: "easeInOut", delay: 0.4 }}
+                >
                   <div className="p-2 rounded-lg bg-amber-100 text-amber-800 mt-0.5">
                     <LuShieldCheck className="w-4 h-4" />
                   </div>
@@ -127,9 +171,15 @@ export default function SambutanPrincipal(): React.ReactElement {
                       Integritas dan budaya kerja profesional.
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="flex items-start gap-3">
+                <motion.div
+                  className="flex items-start gap-3"
+                  initial={{ opacity: 0, translateY: 10 }}
+                  whileInView={{ opacity: 1, translateY: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ ease: "easeInOut", delay: 0.5 }}
+                >
                   <div className="p-2 rounded-lg bg-sky-100 text-sky-600 mt-0.5">
                     <LuZap className="w-4 h-4" />
                   </div>
@@ -141,7 +191,7 @@ export default function SambutanPrincipal(): React.ReactElement {
                       Materi pembelajaran yang tersinkronisasi DUDI.
                     </p>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>

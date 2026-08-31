@@ -1,21 +1,32 @@
+"use client";
+
 import React from "react";
-import {
-  LuGraduationCap,
-  LuMapPin,
-  LuPhone,
-  LuMail,
-  LuClock,
-} from "react-icons/lu";
+import { LuMapPin, LuPhone, LuMail, LuClock } from "react-icons/lu";
+import { motion } from "framer-motion";
 import { SCHOOL_ADDRESS } from "../lib/data";
 
 export default function Footer(): React.ReactElement {
   return (
-    <footer id="kontak" className="bg-sky-500 text-white pt-16 pb-12">
+    <footer
+      id="kontak"
+      className="bg-sky-500 text-white pt-16 pb-12 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white">
-          <div className="md:col-span-5 space-y-4">
+          {/* Kolom Profil Sekolah */}
+          <motion.div
+            className="md:col-span-5 space-y-4"
+            initial={{ opacity: 0, translateY: 10 }}
+            whileInView={{ opacity: 1, translateY: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ ease: "easeInOut" }}
+          >
             <div className="flex items-center gap-3">
-              <img className="w-10 h-10" src="/images/smkn1bantul_logo.png" />
+              <img
+                className="w-10 h-10"
+                src="/images/smkn1bantul_logo.png"
+                alt="Logo SMKN 1 Bantul"
+              />
               <div>
                 <span className="font-extrabold text-lg text-white">
                   SMKN 1 BANTUL
@@ -39,9 +50,16 @@ export default function Footer(): React.ReactElement {
                 <span>{SCHOOL_ADDRESS}</span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="md:col-span-3 space-y-3">
+          {/* Kolom Tautan Cepat */}
+          <motion.div
+            className="md:col-span-3 space-y-3"
+            initial={{ opacity: 0, translateY: 10 }}
+            whileInView={{ opacity: 1, translateY: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ ease: "easeInOut", delay: 0.2 }}
+          >
             <h4 className="text-sm font-bold text-white">Tautan Cepat</h4>
             <ul className="space-y-2 text-xs text-slate-200">
               <li>
@@ -77,17 +95,21 @@ export default function Footer(): React.ReactElement {
                 </a>
               </li>
               <li>
-                <a
-                  href="#spmb"
-                  className="hover:text-white transition-colors"
-                >
+                <a href="#spmb" className="hover:text-white transition-colors">
                   Informasi SPMB 2026
                 </a>
               </li>
             </ul>
-          </div>
+          </motion.div>
 
-          <div className="md:col-span-4 space-y-3">
+          {/* Kolom Kontak Layanan */}
+          <motion.div
+            className="md:col-span-4 space-y-3"
+            initial={{ opacity: 0, translateY: 10 }}
+            whileInView={{ opacity: 1, translateY: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ ease: "easeInOut", delay: 0.4 }}
+          >
             <h4 className="text-sm font-bold text-white">Kontak Layanan</h4>
             <div className="space-y-2.5 text-xs text-slate-200">
               <div className="flex items-center gap-2.5">
@@ -103,10 +125,17 @@ export default function Footer(): React.ReactElement {
                 <span>Senin - Jumat: 07.00 - 15.30 WIB</span>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-200 gap-4">
+        {/* Bottom Bar Footer */}
+        <motion.div
+          className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-200 gap-4"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ ease: "easeInOut", delay: 0.5 }}
+        >
           <p>&copy; 2026 SMKN 1 Bantul. All Rights Reserved.</p>
           <div className="flex gap-4">
             <a href="#" className="hover:text-white transition-colors">
@@ -119,7 +148,7 @@ export default function Footer(): React.ReactElement {
               Peta Situs
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );

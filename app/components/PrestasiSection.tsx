@@ -1,31 +1,52 @@
+"use client";
+
 import React from "react";
 import { LuAward, LuStar } from "react-icons/lu";
+import { motion } from "framer-motion";
 import { PRESTASI_DATA } from "../lib/data";
 
 export default function PrestasiSection(): React.ReactElement {
   return (
-    <section
-      id="prestasi"
-      className="py-24 bg-white border-t border-slate-100"
-    >
+    <section id="prestasi" className="py-24 bg-white border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header Section */}
         <div className="flex justify-center mb-12">
           <div className="flex flex-col items-center">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-amber-100 text-amber-800 text-xs font-bold mb-3">
+            {/* Badge Header */}
+            <motion.div
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-amber-100 text-amber-800 text-xs font-bold mb-3"
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ ease: "easeInOut", delay: 0.1, duration: 0.5 }}
+            >
               <LuAward className="w-3.5 h-3.5 text-amber-700" />
               Hall of Fame
-            </div>
-            <h2 className="text-3xl sm:text-4xl text-center font-extrabold text-slate-900 tracking-tight">
+            </motion.div>
+
+            {/* Judul Utama */}
+            <motion.h2
+              className="text-3xl sm:text-4xl text-center font-extrabold text-slate-900 tracking-tight"
+              initial={{ opacity: 0, translateY: 10 }}
+              whileInView={{ opacity: 1, translateY: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ ease: "easeInOut" }}
+            >
               Prestasi &amp; Karya Siswa SMKN 1 Bantul
-            </h2>
+            </motion.h2>
           </div>
         </div>
 
+        {/* Grid Card Prestasi */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {PRESTASI_DATA.map((item) => (
-            <div
+          {PRESTASI_DATA.map((item, index) => (
+            <motion.div
               key={item.id}
               className="bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between group"
+              initial={{ opacity: 0, translateY: 10 }}
+              whileInView={{ opacity: 1, translateY: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ ease: "easeInOut", delay: index * 0.2 }}
             >
               <div>
                 <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
@@ -62,7 +83,7 @@ export default function PrestasiSection(): React.ReactElement {
                 <span>Tahun Rilis: {item.year}</span>
                 <span className="text-sky-500 font-bold">{item.category}</span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
