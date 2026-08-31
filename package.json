@@ -17,6 +17,7 @@
     "@supabase/ssr": "^0.12.0",
     "@supabase/supabase-js": "^2.107.0",
     "dayjs": "^1.11.21",
+    "framer-motion": "^13.1.1",
     "lenis": "^1.3.26",
     "next": "16.2.3",
     "next-cloudinary": "^6.17.5",
