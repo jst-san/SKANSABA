@@ -141,7 +141,7 @@ export default function ProgramKeahlianLayout({
           <div className="flex items-center gap-2 overflow-x-auto py-3 no-scrollbar scroll-smooth">
             {JURUSAN_LIST.map((tab) => {
               const Icon = tab.icon;
-              const isActive = currentshortCode === tab.shortCode;
+              const isActive = currentshortCode === tab.shortCode.toLowerCase();
 
               return (
                 <Link
@@ -166,7 +166,7 @@ export default function ProgramKeahlianLayout({
         </div>
       </section>
 
-      {/* 3. FULL-WIDTH CONTENT AREA (TANPA SIDEBAR) */}
+      {/* 3. FULL-WIDTH CONTENT AREA */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         <div className="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-10 shadow-sm">
           {children}
