@@ -69,7 +69,7 @@ export default function InformasiLayout({
             <span className="text-sky-400">Informasi</span>
           </nav>
 
-          <div className="max-w-3xl">
+          <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400 text-amber-950 text-xs font-bold mb-3 shadow-sm">
               <LuInfo className="w-4 h-4" />
               <span>Portal Informasi Publik</span>

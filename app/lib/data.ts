@@ -61,7 +61,6 @@ export interface Berita {
   url: string;
 }
 
-
 export const JURUSAN_DATA: Jurusan[] = [
   {
     id: "rpl",
@@ -90,6 +89,7 @@ export const JURUSAN_DATA: Jurusan[] = [
       "Database Design & SQL",
       "DevOps & API Design",
     ],
+    mitra: ["Bnet Indonesia", "Dicoding Indonesia", "Software House Jogja"],
   },
   {
     id: "tkj",
@@ -118,6 +118,7 @@ export const JURUSAN_DATA: Jurusan[] = [
       "Linux & Windows Server",
       "Network Security",
     ],
+    mitra: ["Telkom Indonesia", "Bnet Provider", "Biznet Networks"],
   },
   {
     id: "dkv",
@@ -145,6 +146,11 @@ export const JURUSAN_DATA: Jurusan[] = [
       "3D Modeling & Animation",
       "Commercial Photography",
       "Digital Illustration",
+    ],
+    mitra: [
+      "Studio Animasi Jogja",
+      "Percetakan Media Grafika",
+      "Agensi Kreatif",
     ],
   },
   {
@@ -174,6 +180,7 @@ export const JURUSAN_DATA: Jurusan[] = [
       "Financial Statement Analysis",
       "Excel & Spreadsheet Expert",
     ],
+    mitra: ["Bank BPD DIY", "Bank Syariah Indonesia", "KJA Mitra Utama"],
   },
   {
     id: "lps",
@@ -202,6 +209,7 @@ export const JURUSAN_DATA: Jurusan[] = [
       "Customer Service Excellence",
       "Mikro Pembiayaan Syariah",
     ],
+    mitra: ["BSI Kantor Cabang Bantul", "BMT Jogja", "Bank BPD DIY Syariah"],
   },
   {
     id: "mp",
@@ -230,6 +238,7 @@ export const JURUSAN_DATA: Jurusan[] = [
       "Event & Protocol Management",
       "Automation Office Tools",
     ],
+    mitra: ["Dinas Perpustakaan Bantul", "PT Pembangunan Jaya", "Kancab PLN"],
   },
   {
     id: "br",
@@ -258,6 +267,7 @@ export const JURUSAN_DATA: Jurusan[] = [
       "Customer Service & Sales",
       "Pengemasan & Pendistribusian Produk",
     ],
+    mitra: ["Indomaret Group", "Alfamart", "Super Indo Yogyakarta"],
   },
   {
     id: "bd",
@@ -287,6 +297,7 @@ export const JURUSAN_DATA: Jurusan[] = [
       "Digital Marketing (ads, SEO, content)",
       "Digital Operation & E-commerce",
     ],
+    mitra: ["Shopee Indonesia", "Tokopedia Affiliate", "Agensi Marketing DIY"],
   },
 ];
 
@@ -364,7 +375,7 @@ export const SPMB_STEPS: Step[] = [
 
 export const SCHOOL_ADDRESS = `Jl. Parangtritis KM 11, Dukuh, Sabdodadi, Kec. Bantul, Kab. Bantul, D.I. Yogyakarta 55715`;
 
-export const BERITA_DATA:Berita[] = [
+export const BERITA_DATA: Berita[] = [
   {
     id: "mou-bnet-2026",
     title:

@@ -23,35 +23,6 @@ interface ProfilLayoutProps {
 export default function ProfilSekolahLayout({
   children,
 }: ProfilLayoutProps): React.ReactElement {
-  const pathname = usePathname();
-
-  // Definisi tab navigasi internal profil sekolah
-  const navTabs = [
-    {
-      label: "Sejarah",
-      path: "/sejarah",
-      icon: LuHistory,
-      desc: "Perjalanan dan rekam jejak berdirinya sekolah",
-    },
-    {
-      label: "Visi & Misi",
-      path: "/visi-misi",
-      icon: LuTarget,
-      desc: "Arah pandang dan komitmen mutu pendidikan",
-    },
-    {
-      label: "Struktur Organisasi",
-      path: "/struktur-organisasi",
-      icon: LuNetwork,
-      desc: "Bagan kepemimpinan dan manajemen sekolah",
-    },
-    {
-      label: "Sarana & Prasarana",
-      path: "/sarana-prasarana",
-      icon: LuBuilding2,
-      desc: "Fasilitas pembelajaran dan Teaching Factory",
-    },
-  ];
 
   return (
     <div className="pt-24 pb-20 min-h-screen">
@@ -75,7 +46,7 @@ export default function ProfilSekolahLayout({
             <span className="text-sky-400">Profil Sekolah</span>
           </nav>
 
-          <div className="max-w-3xl space-y-3">
+          <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400 text-amber-950 text-xs font-bold mb-3 shadow-sm">
               <LuGraduationCap className="w-4 h-4" />
               <span>Mengenal SMKN 1 Bantul</span>
@@ -88,36 +59,6 @@ export default function ProfilSekolahLayout({
               berteknologi tinggi, serta mencetak lulusan kompeten berkarakter
               Profil Pelajar Pancasila.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 2. SUB-NAVIGATION TABS */}
-      <section className="sticky top-20 z-30 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 overflow-x-auto py-3 no-scrollbar scroll-smooth">
-            {navTabs.map((tab) => {
-              const Icon = tab.icon;
-              const isActive =
-                pathname === tab.path || pathname.endsWith(tab.path);
-
-              return (
-                <Link
-                  key={tab.path}
-                  href={tab.path}
-                  className={`flex items-center gap-2.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border whitespace-nowrap transition-all duration-200 shrink-0 ${
-                    isActive
-                      ? "bg-sky-500 text-white shadow-md shadow-sky-500/20 border-sky-500"
-                      : "bg-slate-100/70 text-slate-600 hover:bg-sky-50 hover:text-sky-600 border-slate-100"
-                  }`}
-                >
-                  <Icon
-                    className={`w-4 h-4 ${isActive ? "text-white" : "text-slate-500"}`}
-                  />
-                  <span>{tab.label}</span>
-                </Link>
-              );
-            })}
           </div>
         </div>
       </section>
