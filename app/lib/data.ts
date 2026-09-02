@@ -23,6 +23,7 @@ export interface Jurusan {
   prospek: string[];
   fasilitas: string[];
   keahlian: string[];
+  mitra: string[]
 }
 
 export interface Prestasi {
