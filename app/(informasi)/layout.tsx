@@ -50,7 +50,7 @@ export default function InformasiLayout({
     <div className="pt-24 pb-20 min-h-screen">
       {/* 1. HERO HEADER BANNER INFORMASI */}
       <section
-        className="relative bg-center bg-cover bg-no-repeat border-b border-slate-200/60 text-white pt-10 pb-12 overflow-hidden"
+        className="relative bg-cover bg-center bg-no-repeat border-b border-slate-200/60 text-white pt-10 pb-12 overflow-hidden"
         style={{
           backgroundImage:
             "url('https://upload.wikimedia.org/wikipedia/commons/b/b6/Front_view_of_SMKN_1_Bantul.jpg')",

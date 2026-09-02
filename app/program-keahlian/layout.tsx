@@ -97,7 +97,7 @@ export default function ProgramKeahlianLayout({
     <div className="pt-24 pb-20 min-h-screen">
       {/* 1. DYNAMIC HERO HEADER BANNER */}
       <section
-        className="relative bg-center bg-gradient-to-b from-sky-50/80 via-blue-50/40 to-[#fafafa] border-b border-slate-200/60 text-white pt-10 pb-12 overflow-hidden"
+        className="relative bg-cover bg-center bg-gradient-to-b from-sky-50/80 via-blue-50/40 to-[#fafafa] border-b border-slate-200/60 text-white pt-10 pb-12 overflow-hidden"
         style={{
           backgroundImage: `url('${activeJurusan.bannerImg}')`,
         }}

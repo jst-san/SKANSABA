@@ -88,8 +88,8 @@ export default function Navbar(): React.ReactElement {
       par: "Siswa",
       childs: [
         {
-          label: "Ekstrakulikuler",
-          path: "/ekstrakulikuler",
+          label: "Ekstrakurikuler",
+          path: "/ekstrakurikuler",
         },
         {
           label: "Organisasi",

@@ -24,7 +24,7 @@ export default function StrukturOrganisasiPage(): React.ReactElement {
     },
     {
       bidang: "Waka Kesiswaan",
-      role: "Pembinaan Siswa & Ekstrakulikuler",
+      role: "Pembinaan Siswa & Ekstrakurikuler",
       desc: "Mengelola kedisiplinan, penguatan karakter Profil Pelajar Pancasila, OSIS, pembinaan prestasi, dan kegiatan ekstrakurikuler.",
       icon: LuUsers,
     },

@@ -19,7 +19,7 @@ export default function SPMBSection(): React.ReactElement {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Banner Card */}
         <motion.div
-          className="bg-gradient-to-r from-sky-500 via-sky-600 to-indigo-900 bg-center rounded-3xl p-8 sm:p-12 mb-16 text-white shadow-xl relative overflow-hidden"
+          className="bg-gradient-to-r from-sky-500 via-sky-600 to-indigo-900 bg-cover bg-center rounded-3xl p-8 sm:p-12 mb-16 text-white shadow-xl relative overflow-hidden"
           style={{
             backgroundImage:
               "url('https://upload.wikimedia.org/wikipedia/commons/b/b6/Front_view_of_SMKN_1_Bantul.jpg')",
