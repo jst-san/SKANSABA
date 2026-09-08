@@ -19,37 +19,43 @@ import {
 interface ProfilLayoutProps {
   children: React.ReactNode;
 }
-
 export default function ProfilSekolahLayout({
   children,
 }: ProfilLayoutProps): React.ReactElement {
   const pathname = usePathname();
 
+  const currentSlug = pathname.split("/").pop() || "sejarah";
+  const activeTab = navTabs.find((tab) => tab.slug === currentSlug) || navTabs[0];
+
   // Definisi tab navigasi internal profil sekolah
   const navTabs = [
     {
-      label: "Sejarah",
-      path: "/sejarah",
+      name: "Sejarah",
+      slug: "sejarah",
       icon: LuHistory,
-      desc: "Perjalanan dan rekam jejak berdirinya sekolah",
+      description: "Mewujudkan lembaga pendidikan kejuruan yang berintegritas, berteknologi tinggi, serta mencetak lulusan kompeten berkarakter Profil Pelajar Pancasila.",
+      bannerImg: "https://upload.wikimedia.org/wikipedia/commons/b/b6/Front_view_of_SMKN_1_Bantul.jpg"
     },
     {
-      label: "Visi & Misi",
-      path: "/visi-misi",
+      name: "Visi & Misi",
+      slug: "visi-misi",
       icon: LuTarget,
-      desc: "Arah pandang dan komitmen mutu pendidikan",
+      description: "Mewujudkan lembaga pendidikan kejuruan yang berintegritas, berteknologi tinggi, serta mencetak lulusan kompeten berkarakter Profil Pelajar Pancasila.",
+      bannerImg: "https://upload.wikimedia.org/wikipedia/commons/b/b6/Front_view_of_SMKN_1_Bantul.jpg"
     },
     {
-      label: "Struktur Organisasi",
-      path: "/struktur-organisasi",
+      name: "Struktur Organisasi",
+      slug: "struktur-organisasi",
       icon: LuNetwork,
-      desc: "Bagan kepemimpinan dan manajemen sekolah",
+      description: "Mewujudkan lembaga pendidikan kejuruan yang berintegritas, berteknologi tinggi, serta mencetak lulusan kompeten berkarakter Profil Pelajar Pancasila.",
+      bannerImg: "https://upload.wikimedia.org/wikipedia/commons/b/b6/Front_view_of_SMKN_1_Bantul.jpg"
     },
     {
-      label: "Sarana & Prasarana",
-      path: "/sarana-prasarana",
+      name: "Sarana & Prasarana",
+      slug: "sarana-prasarana",
       icon: LuBuilding2,
-      desc: "Fasilitas pembelajaran dan Teaching Factory",
+      description: "Mewujudkan lembaga pendidikan kejuruan yang berintegritas, berteknologi tinggi, serta mencetak lulusan kompeten berkarakter Profil Pelajar Pancasila.",
+      bannerImg: "https://upload.wikimedia.org/wikipedia/commons/b/b6/Front_view_of_SMKN_1_Bantul.jpg"
     },
   ];
 
@@ -60,7 +66,7 @@ export default function ProfilSekolahLayout({
         className="relative bg-cover bg-center bg-gradient-to-b from-sky-50/80 via-blue-50/40 to-[#fafafa] border-b border-slate-200/60 text-white pt-10 pb-12 overflow-hidden"
         style={{
           backgroundImage:
-            "url('https://upload.wikimedia.org/wikipedia/commons/b/b6/Front_view_of_SMKN_1_Bantul.jpg')",
+            `url('${activeTab.bannerImg}')`,
         }}
       >
         <div className="w-full h-full bg-black/25 absolute inset-0"></div>
@@ -72,7 +78,7 @@ export default function ProfilSekolahLayout({
               Beranda
             </Link>
             <LuChevronRight className="w-3.5 h-3.5 text-slate-400" />
-            <span className="text-sky-400">Profil Sekolah</span>
+            <span className="text-sky-400">{activeTab.name}</span>
           </nav>
 
           <div className="max-w-3xl space-y-3">
@@ -81,12 +87,10 @@ export default function ProfilSekolahLayout({
               <span>Mengenal SMKN 1 Bantul</span>
             </div>
             <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">
-              Profil &amp; Identitas Sekolah
+              {activeTab.name}
             </h1>
             <p className="text-blue-100 text-sm sm:text-base mt-2 leading-relaxed">
-              Mewujudkan lembaga pendidikan kejuruan yang berintegritas,
-              berteknologi tinggi, serta mencetak lulusan kompeten berkarakter
-              Profil Pelajar Pancasila.
+              {activeTab.description}
             </p>
           </div>
         </div>
@@ -99,12 +103,12 @@ export default function ProfilSekolahLayout({
             {navTabs.map((tab) => {
               const Icon = tab.icon;
               const isActive =
-                pathname === tab.path || pathname.endsWith(tab.path);
+                currentSlug === tab.slug;
 
               return (
                 <Link
-                  key={tab.path}
-                  href={tab.path}
+                  key={tab.slug}
+                  href={`/${tab.slug}`}
                   className={`flex items-center gap-2.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border whitespace-nowrap transition-all duration-200 shrink-0 ${
                     isActive
                       ? "bg-sky-500 text-white shadow-md shadow-sky-500/20 border-sky-500"
@@ -114,7 +118,7 @@ export default function ProfilSekolahLayout({
                   <Icon
                     className={`w-4 h-4 ${isActive ? "text-white" : "text-slate-500"}`}
                   />
-                  <span>{tab.label}</span>
+                  <span>{tab.name}</span>
                 </Link>
               );
             })}
