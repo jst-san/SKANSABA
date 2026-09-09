@@ -23,7 +23,7 @@ export interface Jurusan {
   prospek: string[];
   fasilitas: string[];
   keahlian: string[];
-  mitra: string[]
+  mitra: string[];
 }
 
 export interface Prestasi {
@@ -60,6 +60,31 @@ export interface Berita {
   excerpt: string;
   imageUrl: string;
   url: string;
+}
+
+export interface StudentEntity {
+  user_id: string | null;
+  nisn: number;
+  nis: number;
+  name: string;
+  alumni: boolean;
+  kelas: number;
+  jurusan: "rpl" | "tkj" | "dkv" | "akl" | "lps" | "mp" | "br" | "bd" | string;
+  rombel: number;
+  angkatan: number;
+  points: number;
+  options: {
+    avatar?: string;
+    achievementsCount?: {
+      internasional: number;
+      nasional: number;
+      provinsi: number;
+      kabupaten: number;
+      internal: number;
+    };
+  };
+  updated_at: string | null;
+  created_at: string;
 }
 
 export const JURUSAN_DATA: Jurusan[] = [
@@ -465,5 +490,908 @@ export const BERITA_DATA: Berita[] = [
       "Haryo Djati R dan Anggara Deni A sukses menyabet Juara 1 Kewirausahaan Siswa tingkat D.I. Yogyakarta melalui inovasi produk bisnis kreatif.",
     imageUrl: "https://smkn1bantul.sch.id/assets/images/berita/fiksi-diy.jpg",
     url: "https://smkn1bantul.sch.id",
+  },
+];
+
+export const STUDENTS_DATA: StudentEntity[] = [
+  {
+    user_id: null,
+    nisn: 479105780001231,
+    nis: 1,
+    name: "JANE DOE",
+    alumni: false,
+    kelas: 12,
+    jurusan: "rpl",
+    rombel: 1,
+    angkatan: 2024,
+    points: 2450,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 1,
+        nasional: 2,
+        provinsi: 3,
+        kabupaten: 2,
+        internal: 1,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001232,
+    nis: 2,
+    name: "ADITYA PRATAMA NUGRAHA",
+    alumni: false,
+    kelas: 12,
+    jurusan: "tkj",
+    rombel: 2,
+    angkatan: 2024,
+    points: 1980,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 2,
+        provinsi: 2,
+        kabupaten: 4,
+        internal: 2,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001233,
+    nis: 3,
+    name: "CITRA LESTARI DEWI",
+    alumni: false,
+    kelas: 11,
+    jurusan: "dkv",
+    rombel: 1,
+    angkatan: 2025,
+    points: 1720,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 1,
+        provinsi: 3,
+        kabupaten: 2,
+        internal: 3,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001234,
+    nis: 4,
+    name: "DIMAS ANGGARA PUTRA",
+    alumni: false,
+    kelas: 12,
+    jurusan: "akl",
+    rombel: 1,
+    angkatan: 2024,
+    points: 1540,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 1,
+        provinsi: 2,
+        kabupaten: 3,
+        internal: 1,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001235,
+    nis: 5,
+    name: "EKA PURWANTI SARI",
+    alumni: false,
+    kelas: 11,
+    jurusan: "lps",
+    rombel: 1,
+    angkatan: 2025,
+    points: 1410,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 3,
+        kabupaten: 2,
+        internal: 4,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001236,
+    nis: 6,
+    name: "FAJAR NUGRAHA SYAHPUTRA",
+    alumni: false,
+    kelas: 10,
+    jurusan: "mp",
+    rombel: 2,
+    angkatan: 2026,
+    points: 1320,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 2,
+        kabupaten: 4,
+        internal: 2,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001237,
+    nis: 7,
+    name: "GITA GUTAWA WULANDARI",
+    alumni: false,
+    kelas: 12,
+    jurusan: "br",
+    rombel: 1,
+    angkatan: 2024,
+    points: 1250,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 1,
+        provinsi: 1,
+        kabupaten: 3,
+        internal: 1,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001238,
+    nis: 8,
+    name: "HENDRA WIJAYA KUSUMA",
+    alumni: false,
+    kelas: 11,
+    jurusan: "bd",
+    rombel: 2,
+    angkatan: 2025,
+    points: 1180,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 2,
+        kabupaten: 2,
+        internal: 5,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001239,
+    nis: 9,
+    name: "INDAH PERMATA SARI",
+    alumni: false,
+    kelas: 10,
+    jurusan: "rpl",
+    rombel: 2,
+    angkatan: 2026,
+    points: 1100,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 2,
+        kabupaten: 1,
+        internal: 4,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001240,
+    nis: 10,
+    name: "JOKO TINGKIR SANTOSO",
+    alumni: false,
+    kelas: 12,
+    jurusan: "tkj",
+    rombel: 1,
+    angkatan: 2024,
+    points: 1050,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 1,
+        kabupaten: 4,
+        internal: 2,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001241,
+    nis: 11,
+    name: "KIKI AMELIA PUTRI",
+    alumni: false,
+    kelas: 11,
+    jurusan: "dkv",
+    rombel: 2,
+    angkatan: 2025,
+    points: 990,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 1,
+        kabupaten: 3,
+        internal: 3,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001242,
+    nis: 12,
+    name: "LUKMAN HAKIM ROSYID",
+    alumni: false,
+    kelas: 10,
+    jurusan: "akl",
+    rombel: 2,
+    angkatan: 2026,
+    points: 920,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 1,
+        kabupaten: 2,
+        internal: 4,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001243,
+    nis: 13,
+    name: "MAULANA MALIK IBRAHIM",
+    alumni: false,
+    kelas: 12,
+    jurusan: "lps",
+    rombel: 1,
+    angkatan: 2024,
+    points: 870,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 1,
+        kabupaten: 2,
+        internal: 3,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001244,
+    nis: 14,
+    name: "NABILA SYAKIEB ANGGRAENI",
+    alumni: false,
+    kelas: 11,
+    jurusan: "mp",
+    rombel: 1,
+    angkatan: 2025,
+    points: 810,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 1,
+        kabupaten: 1,
+        internal: 5,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001245,
+    nis: 15,
+    name: "OKTAVIANUS SETIAWAN",
+    alumni: false,
+    kelas: 10,
+    jurusan: "br",
+    rombel: 1,
+    angkatan: 2026,
+    points: 760,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 0,
+        kabupaten: 3,
+        internal: 3,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001246,
+    nis: 16,
+    name: "PUTRI MARINO FEBRIANTI",
+    alumni: false,
+    kelas: 12,
+    jurusan: "bd",
+    rombel: 1,
+    angkatan: 2024,
+    points: 720,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 0,
+        kabupaten: 3,
+        internal: 2,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001247,
+    nis: 17,
+    name: "QORI SANDIORIVA AYU",
+    alumni: false,
+    kelas: 11,
+    jurusan: "rpl",
+    rombel: 1,
+    angkatan: 2025,
+    points: 680,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 0,
+        kabupaten: 2,
+        internal: 4,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001248,
+    nis: 18,
+    name: "RIAN ARDIANTO PRATAMA",
+    alumni: false,
+    kelas: 10,
+    jurusan: "tkj",
+    rombel: 2,
+    angkatan: 2026,
+    points: 640,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 0,
+        kabupaten: 2,
+        internal: 3,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001249,
+    nis: 19,
+    name: "SITI BADRIAH LESTARI",
+    alumni: false,
+    kelas: 12,
+    jurusan: "dkv",
+    rombel: 2,
+    angkatan: 2024,
+    points: 600,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 0,
+        kabupaten: 2,
+        internal: 2,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001250,
+    nis: 20,
+    name: "TAUFIK HIDAYAT SANTOSO",
+    alumni: false,
+    kelas: 11,
+    jurusan: "akl",
+    rombel: 2,
+    angkatan: 2025,
+    points: 560,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 0,
+        kabupaten: 1,
+        internal: 5,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001251,
+    nis: 21,
+    name: "UMAR ISMAIL HASAN",
+    alumni: false,
+    kelas: 10,
+    jurusan: "lps",
+    rombel: 2,
+    angkatan: 2026,
+    points: 520,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 0,
+        kabupaten: 1,
+        internal: 4,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001252,
+    nis: 22,
+    name: "VINA PANDUWINATA MAHARANI",
+    alumni: false,
+    kelas: 12,
+    jurusan: "mp",
+    rombel: 2,
+    angkatan: 2024,
+    points: 480,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 0,
+        kabupaten: 1,
+        internal: 3,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001253,
+    nis: 23,
+    name: "WAWAN FEBRIANTO NUGROHO",
+    alumni: false,
+    kelas: 11,
+    jurusan: "br",
+    rombel: 2,
+    angkatan: 2025,
+    points: 440,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 0,
+        kabupaten: 1,
+        internal: 2,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001254,
+    nis: 24,
+    name: "XENA WARRIOR PRINCESS",
+    alumni: false,
+    kelas: 10,
+    jurusan: "bd",
+    rombel: 2,
+    angkatan: 2026,
+    points: 400,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 0,
+        kabupaten: 0,
+        internal: 5,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001255,
+    nis: 25,
+    name: "YUNI SHARA ANGGRAINIK",
+    alumni: false,
+    kelas: 12,
+    jurusan: "rpl",
+    rombel: 2,
+    angkatan: 2024,
+    points: 360,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 0,
+        kabupaten: 0,
+        internal: 4,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001256,
+    nis: 26,
+    name: "ZACK LEE KURNIAWAN",
+    alumni: false,
+    kelas: 11,
+    jurusan: "tkj",
+    rombel: 1,
+    angkatan: 2025,
+    points: 320,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 0,
+        kabupaten: 0,
+        internal: 3,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001257,
+    nis: 27,
+    name: "ANDI WIJAYA PRANOTO",
+    alumni: false,
+    kelas: 10,
+    jurusan: "dkv",
+    rombel: 1,
+    angkatan: 2026,
+    points: 290,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 0,
+        kabupaten: 0,
+        internal: 3,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001258,
+    nis: 28,
+    name: "BAGUS KAHFI ALFIAN",
+    alumni: false,
+    kelas: 12,
+    jurusan: "akl",
+    rombel: 1,
+    angkatan: 2024,
+    points: 260,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 0,
+        kabupaten: 0,
+        internal: 2,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001259,
+    nis: 29,
+    name: "CINTA LAURA KIEHL",
+    alumni: false,
+    kelas: 11,
+    jurusan: "lps",
+    rombel: 2,
+    angkatan: 2025,
+    points: 230,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 0,
+        kabupaten: 0,
+        internal: 2,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001260,
+    nis: 30,
+    name: "DIMAS SETO NUGROHO",
+    alumni: false,
+    kelas: 10,
+    jurusan: "mp",
+    rombel: 1,
+    angkatan: 2026,
+    points: 200,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 0,
+        kabupaten: 0,
+        internal: 2,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001261,
+    nis: 31,
+    name: "EKA RAMDANI SYAH",
+    alumni: false,
+    kelas: 12,
+    jurusan: "br",
+    rombel: 1,
+    angkatan: 2024,
+    points: 170,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 0,
+        kabupaten: 0,
+        internal: 1,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001262,
+    nis: 32,
+    name: "FIKI NAKI PRATAMA",
+    alumni: false,
+    kelas: 11,
+    jurusan: "bd",
+    rombel: 1,
+    angkatan: 2025,
+    points: 140,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 0,
+        kabupaten: 0,
+        internal: 1,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001263,
+    nis: 33,
+    name: "GRACE NATALIE MAHARANI",
+    alumni: false,
+    kelas: 10,
+    jurusan: "rpl",
+    rombel: 1,
+    angkatan: 2026,
+    points: 110,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 0,
+        kabupaten: 0,
+        internal: 1,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001264,
+    nis: 34,
+    name: "HANIFAN YUDANI KUSUMA",
+    alumni: false,
+    kelas: 12,
+    jurusan: "tkj",
+    rombel: 2,
+    angkatan: 2024,
+    points: 80,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 0,
+        kabupaten: 0,
+        internal: 1,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001265,
+    nis: 35,
+    name: "IRFAN BACHDIM SAPUTRA",
+    alumni: false,
+    kelas: 11,
+    jurusan: "dkv",
+    rombel: 1,
+    angkatan: 2025,
+    points: 50,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 0,
+        kabupaten: 0,
+        internal: 1,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
+  },
+  {
+    user_id: null,
+    nisn: 479105780001266,
+    nis: 36,
+    name: "JEFRI NICHOL ALFIAN",
+    alumni: false,
+    kelas: 10,
+    jurusan: "akl",
+    rombel: 1,
+    angkatan: 2026,
+    points: 20,
+    options: {
+      avatar:
+        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80",
+      achievementsCount: {
+        internasional: 0,
+        nasional: 0,
+        provinsi: 0,
+        kabupaten: 0,
+        internal: 1,
+      },
+    },
+    updated_at: null,
+    created_at: "2026-09-06T15:46:35.825Z",
   },
 ];
