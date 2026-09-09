@@ -68,8 +68,6 @@ export default function SiswaLayout({
               Beranda
             </Link>
             <LuChevronRight className="w-3.5 h-3.5 text-slate-400" />
-            <span>Program Keahlian</span>
-            <LuChevronRight className="w-3.5 h-3.5 text-slate-400" />
             <span className="text-sky-400">{activePage.name}</span>
           </nav>
 
