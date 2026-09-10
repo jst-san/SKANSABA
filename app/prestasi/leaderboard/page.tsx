@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
+import {useRouter} from "next/navigation";
 import {
   LuTrophy,
   LuSparkles,
@@ -44,6 +45,7 @@ const CATEGORY_OPTIONS = [
 ];
 
 export default function LeaderboardPage(): React.ReactElement {
+  const router = useRouter()
   // State Search & Pagination
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -208,12 +210,8 @@ export default function LeaderboardPage(): React.ReactElement {
   return (
     <div className="space-y-8 pt-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
       {/* 1. HEADER HALAMAN LEADERBOARD */}
-      <div className="border-b border-slate-100 pb-6 text-center max-w-2xl mx-auto space-y-2">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sky-100 border border-sky-200 text-sky-800 text-xs font-bold shadow-sm">
-          <LuTrophy className="w-4 h-4 text-sky-600" />
-          <span>Hall of Fame Siswa</span>
-        </div>
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+      <div className="border-b border-slate-100 py-12 text-center max-w-2xl mx-auto space-y-2">
+        <h1 className="text-2xl sm:text-4xl font-extrabold text-sky-500 tracking-tight">
           Achievement Leaderboard
         </h1>
         <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
@@ -259,7 +257,7 @@ export default function LeaderboardPage(): React.ReactElement {
             {/* Multi-select Jurusan */}
             <div className="space-y-2">
               <label className="text-[11px] font-extrabold text-slate-500 uppercase tracking-wider block">
-                Pilih Jurusan (Multi-select)
+                Pilih Jurusan
               </label>
               <div className="flex flex-wrap gap-1.5">
                 {JURUSAN_OPTIONS.map((j) => {
@@ -285,7 +283,7 @@ export default function LeaderboardPage(): React.ReactElement {
             {/* Multi-select Kategori / Jenjang */}
             <div className="space-y-2">
               <label className="text-[11px] font-extrabold text-slate-500 uppercase tracking-wider block">
-                Pilih Kategori Kompetisi (Multi-select)
+                Pilih Kategori Kompetisi
               </label>
               <div className="flex flex-wrap gap-1.5">
                 {CATEGORY_OPTIONS.map((k) => {
@@ -320,7 +318,7 @@ export default function LeaderboardPage(): React.ReactElement {
                 onClick={handleApplyFilter}
                 className="px-4 py-1.5 rounded-xl text-xs font-bold bg-sky-500 hover:bg-sky-600 text-white shadow-sm transition-colors"
               >
-                Apply Filter
+                Terapkan Filter
               </button>
             </div>
           </div>
@@ -357,13 +355,14 @@ export default function LeaderboardPage(): React.ReactElement {
         <div className="grid grid-cols-3 gap-4 lg:gap-6 items-end max-w-4xl mx-auto">
           {/* JUARA 2 */}
           {top2 && (
-            <div className="bg-white border border-slate-200 rounded-2xl p-5 text-center shadow-sm flex flex-col items-center relative">
+            <div className="bg-white border border-slate-200 rounded-2xl p-5 text-center shadow-sm flex flex-col items-center relative" onClick={() => router.push(`/students-directory/${top2.nis}`)}>
               <div className="relative mb-3">
                 <img
-                  src={
-                    top2.options?.avatar ||
-                    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
-                  }
+                  // src={
+                  //   top2.options?.avatar ||
+                  //   "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+                  // }
+                  src="https://img.magnific.com/premium-vector/vector-flat-illustration-grayscale-avatar-user-profile-person-icon-gender-neutral-silhouette-profile-picture-suitable-social-media-profiles-icons-screensavers-as-templatex9xa_719432-2210.jpg?semt=ais_hybrid&w=740&q=80"
                   alt={top2.name}
                   className="w-16 h-16 lg:w-20 lg:h-20 rounded-full object-cover border-4 border-slate-300 shadow-md"
                 />
@@ -380,7 +379,7 @@ export default function LeaderboardPage(): React.ReactElement {
 
               <div className="w-full bg-slate-50 border border-slate-200/80 rounded-xl p-2.5 space-y-0.5 mb-3">
                 <span className="text-[10px] text-slate-400 font-bold uppercase block">
-                  Total Poin Filter
+                  Total Poin
                 </span>
                 <span className="text-base font-black text-slate-900 block">
                   {top2.calculatedPoints.toLocaleString()}
@@ -409,18 +408,15 @@ export default function LeaderboardPage(): React.ReactElement {
 
           {/* JUARA 1 */}
           {top1 && (
-            <div className="bg-sky-500 border-2 border-sky-400 rounded-2xl p-6 text-center text-white shadow-xl flex flex-col items-center relative -translate-y-4">
-              <div className="absolute -top-3.5 bg-sky-300 text-slate-950 px-3 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider flex items-center gap-1 shadow-md">
-                <LuSparkles className="w-3.5 h-3.5 text-slate-950" /> Peringkat
-                1
-              </div>
+            <div className="bg-sky-500 border-2 border-sky-400 rounded-2xl p-6 text-center text-white shadow-xl flex flex-col items-center relative -translate-y-4" onClick={() => router.push(`/students-directory/${top1.nis}`)}>
 
               <div className="relative my-2">
                 <img
-                  src={
-                    top1.options?.avatar ||
-                    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
-                  }
+                  // src={
+                  //   top1.options?.avatar ||
+                  //   "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+                  // }
+                  src="https://img.magnific.com/premium-vector/vector-flat-illustration-grayscale-avatar-user-profile-person-icon-gender-neutral-silhouette-profile-picture-suitable-social-media-profiles-icons-screensavers-as-templatex9xa_719432-2210.jpg?semt=ais_hybrid&w=740&q=80"
                   alt={top1.name}
                   className="w-20 h-20 lg:w-24 lg:h-24 rounded-full object-cover border-4 border-white shadow-xl ring-4 ring-sky-300/30"
                 />
@@ -433,13 +429,12 @@ export default function LeaderboardPage(): React.ReactElement {
                 {top1.name}
               </h3>
               <p className="text-xs text-sky-200 font-semibold mb-3">
-                {top1.kelas} {top1.jurusan.toUpperCase()} {top1.rombel} •{" "}
-                {getJurusanName(top1.jurusan)}
+                {top1.kelas} {top1.jurusan.toUpperCase()} {top1.rombel}
               </p>
 
               <div className="w-full bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-2.5 space-y-0.5 mb-3">
                 <span className="text-[10px] text-sky-200 font-bold uppercase block">
-                  Total Poin Filter
+                  Total Poin
                 </span>
                 <span className="text-lg font-black text-white block">
                   {top1.calculatedPoints.toLocaleString()} Poin
@@ -468,13 +463,14 @@ export default function LeaderboardPage(): React.ReactElement {
 
           {/* JUARA 3 */}
           {top3 && (
-            <div className="bg-white border border-slate-200 rounded-2xl p-5 text-center shadow-sm flex flex-col items-center relative">
+            <div className="bg-white border border-slate-200 rounded-2xl p-5 text-center shadow-sm flex flex-col items-center relative" onClick={() => router.push(`/students-directory/${top3.nis}`)}>
               <div className="relative mb-3">
                 <img
-                  src={
-                    top3.options?.avatar ||
-                    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
-                  }
+                  // src={
+                  //   top3.options?.avatar ||
+                  //   "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+                  // }
+                  src="https://img.magnific.com/premium-vector/vector-flat-illustration-grayscale-avatar-user-profile-person-icon-gender-neutral-silhouette-profile-picture-suitable-social-media-profiles-icons-screensavers-as-templatex9xa_719432-2210.jpg?semt=ais_hybrid&w=740&q=80"
                   alt={top3.name}
                   className="w-16 h-16 lg:w-20 lg:h-20 rounded-full object-cover border-4 border-indigo-200 shadow-md"
                 />
@@ -491,7 +487,7 @@ export default function LeaderboardPage(): React.ReactElement {
 
               <div className="w-full bg-slate-50 border border-slate-200/80 rounded-xl p-2.5 space-y-0.5 mb-3">
                 <span className="text-[10px] text-slate-400 font-bold uppercase block">
-                  Total Poin Filter
+                  Total Poin
                 </span>
                 <span className="text-base font-black text-slate-900 block">
                   {top3.calculatedPoints.toLocaleString()}
@@ -527,10 +523,11 @@ export default function LeaderboardPage(): React.ReactElement {
             <div className="flex items-center gap-3">
               <div className="relative shrink-0">
                 <img
-                  src={
-                    top1.options?.avatar ||
-                    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
-                  }
+                  // src={
+                  //   top1.options?.avatar ||
+                  //   "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+                  // }
+                  src="https://img.magnific.com/premium-vector/vector-flat-illustration-grayscale-avatar-user-profile-person-icon-gender-neutral-silhouette-profile-picture-suitable-social-media-profiles-icons-screensavers-as-templatex9xa_719432-2210.jpg?semt=ais_hybrid&w=740&q=80"
                   alt={top1.name}
                   className="w-16 h-16 rounded-full object-cover border-2 border-white shadow-md"
                 />
@@ -548,7 +545,6 @@ export default function LeaderboardPage(): React.ReactElement {
                 </h3>
                 <p className="text-[11px] text-sky-100 font-medium truncate">
                   {top1.kelas} {top1.jurusan.toUpperCase()} {top1.rombel} •{" "}
-                  {getJurusanName(top1.jurusan)}
                 </p>
               </div>
 
@@ -589,10 +585,11 @@ export default function LeaderboardPage(): React.ReactElement {
                 <div className="flex items-center gap-2 mb-2">
                   <div className="relative shrink-0">
                     <img
-                      src={
-                        top2.options?.avatar ||
-                        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
-                      }
+                      // src={
+                      //   top2.options?.avatar ||
+                      //   "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+                      // }
+                      src="https://img.magnific.com/premium-vector/vector-flat-illustration-grayscale-avatar-user-profile-person-icon-gender-neutral-silhouette-profile-picture-suitable-social-media-profiles-icons-screensavers-as-templatex9xa_719432-2210.jpg?semt=ais_hybrid&w=740&q=80"
                       alt={top2.name}
                       className="w-10 h-10 rounded-full object-cover border border-slate-200"
                     />
@@ -646,10 +643,11 @@ export default function LeaderboardPage(): React.ReactElement {
                 <div className="flex items-center gap-2 mb-2">
                   <div className="relative shrink-0">
                     <img
-                      src={
-                        top3.options?.avatar ||
-                        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
-                      }
+                      // src={
+                      //   top3.options?.avatar ||
+                      //   "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+                      // }
+                      src="https://img.magnific.com/premium-vector/vector-flat-illustration-grayscale-avatar-user-profile-person-icon-gender-neutral-silhouette-profile-picture-suitable-social-media-profiles-icons-screensavers-as-templatex9xa_719432-2210.jpg?semt=ais_hybrid&w=740&q=80"
                       alt={top3.name}
                       className="w-10 h-10 rounded-full object-cover border border-slate-200"
                     />
@@ -736,11 +734,11 @@ export default function LeaderboardPage(): React.ReactElement {
         </span>
       </div>
 
-      {/* 3. DAFTAR PERINGKAT 4 KE BAWAH */}
+      {/* 3. DAFTAR PERINGKAT 4 KE BAWAH (DESAIN SERAGAM DENGAN STUDENTS DIRECTORY) */}
       <div className="space-y-4 pt-2">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           <h2 className="text-base sm:text-lg font-extrabold text-slate-900 border-l-4 border-sky-500 pl-3">
-            Peringkat Selanjutnya ({filteredLowerRanks.length} Siswa)
+            Peringkat 4+
           </h2>
 
           {/* Search Box */}
@@ -756,42 +754,58 @@ export default function LeaderboardPage(): React.ReactElement {
           </div>
         </div>
 
-        {/* Vertical List Card */}
-        <div className="space-y-2.5">
+        {/* CONTAINER DAFTAR SISWA (SERAGAM DENGAN DIRECTORY) */}
+        <div className="bg-white border border-slate-200/80 rounded-3xl p-4 sm:p-5 shadow-sm divide-y divide-slate-100">
           {paginatedLowerRanks.map((student) => {
+            const classRoman =
+              student.kelas === 10
+                ? "X"
+                : student.kelas === 11
+                ? "XI"
+                : "XII";
+
             return (
               <div
                 key={student.nisn}
-                className="bg-white border border-slate-200/80 rounded-2xl p-3.5 sm:p-4 hover:border-sky-300 hover:shadow-sm transition-all duration-200 space-y-3 sm:space-y-0 sm:flex sm:items-center sm:justify-between sm:gap-4"
+                onClick={() => router.push(`/students-directory/${student.nis}`)}
+                className="py-4 first:pt-1 last:pb-1 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:bg-slate-50/50 px-2 rounded-2xl transition-colors"
               >
-                {/* Profil & Rank Persistent */}
-                <div className="flex items-center gap-3 min-w-0">
-                  <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-slate-100 text-slate-700 font-black text-xs flex items-center justify-center shrink-0 border border-slate-200">
+                {/* PROFIL, RANK & INFORMASI */}
+                <div className="flex items-center gap-3.5 min-w-0">
+                  <span className="w-8 h-8 rounded-xl bg-slate-100 text-slate-700 font-black text-xs flex items-center justify-center shrink-0 border border-slate-200">
                     #{student.filterRank}
                   </span>
 
                   <img
-                    src={
-                      student.options?.avatar ||
-                      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
-                    }
+                    // src={
+                    //   student.options?.avatar ||
+                    //   "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+                    // }
+                    src="https://img.magnific.com/premium-vector/vector-flat-illustration-grayscale-avatar-user-profile-person-icon-gender-neutral-silhouette-profile-picture-suitable-social-media-profiles-icons-screensavers-as-templatex9xa_719432-2210.jpg?semt=ais_hybrid&w=740&q=80"
                     alt={student.name}
-                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border border-slate-200 shrink-0"
+                    className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-slate-100 shrink-0"
                   />
 
                   <div className="min-w-0">
-                    <h3 className="text-xs sm:text-sm font-bold text-slate-900 truncate">
+                    <h3 className="font-extrabold text-slate-900 text-base sm:text-lg truncate leading-snug">
                       {student.name}
                     </h3>
-                    <p className="text-[11px] text-sky-600 font-semibold truncate">
-                      {student.kelas} {student.jurusan.toUpperCase()}{" "}
-                      {student.rombel} • {getJurusanName(student.jurusan)}
+                    <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wide">
+                      {classRoman} {student.jurusan.toUpperCase()} {student.rombel} - ANGKATAN{" "}
+                      {student.angkatan}
                     </p>
+
+                    <div className="mt-1">
+                      <span className="inline-block px-2.5 py-0.5 rounded-md bg-sky-500 text-white font-extrabold text-[10px] tracking-wider uppercase">
+                        {student.jurusan.toUpperCase()}
+                      </span>
+                    </div>
                   </div>
                 </div>
 
-                {/* Rincian Lomba Dinamis Sesuai Filter & Total Poin */}
-                <div className="flex items-center justify-between sm:justify-end gap-3 pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-100">
+                {/* RINCIAN KOMPETISI, STATUS & POIN (SISI KANAN) */}
+                <div className="flex items-center justify-between sm:justify-end gap-3.5 w-full sm:w-auto pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-100 shrink-0">
+                  {/* Rincian Jumlah Lomba Dinamis Active Filter */}
                   <div className="flex items-center gap-1.5 text-[10px] font-bold text-slate-600 bg-slate-50 border border-slate-200 px-2.5 py-1 rounded-xl">
                     {activeCategoryOptions.map((c, idx) => (
                       <React.Fragment key={c.code}>
@@ -813,13 +827,25 @@ export default function LeaderboardPage(): React.ReactElement {
                     ))}
                   </div>
 
-                  {/* Total Poin Dinamis */}
+                  {/* Status Indicator & Total Poin */}
                   <div className="text-right shrink-0">
-                    <span className="text-[9px] font-bold text-slate-400 uppercase block">
-                      Poin
-                    </span>
-                    <span className="text-xs sm:text-sm font-black text-slate-900">
-                      {student.calculatedPoints}
+                    <div className="flex items-center justify-end gap-1.5 mb-0.5">
+                      <span
+                        className={`w-2 h-2 rounded-full ${
+                          student.alumni ? "bg-slate-400" : "bg-emerald-500"
+                        }`}
+                      ></span>
+                      <span
+                        className={`text-[10px] font-extrabold uppercase tracking-wider ${
+                          student.alumni ? "text-slate-400" : "text-emerald-500"
+                        }`}
+                      >
+                        {student.alumni ? "ALUMNI" : "SISWA AKTIF"}
+                      </span>
+                    </div>
+
+                    <span className="text-xl sm:text-2xl font-black text-sky-500 block">
+                      {student.calculatedPoints}pt
                     </span>
                   </div>
                 </div>
@@ -828,14 +854,14 @@ export default function LeaderboardPage(): React.ReactElement {
           })}
 
           {paginatedLowerRanks.length === 0 && (
-            <div className="text-center py-8 bg-slate-50 border border-slate-200 rounded-2xl text-xs text-slate-500">
+            <div className="text-center py-8 text-xs font-semibold text-slate-500">
               Tidak ada data siswa prestasi yang cocok dengan filter atau
               pencarian.
             </div>
           )}
         </div>
 
-        {/* CONTROL PAGINATION */}
+        {/* KONTROL PAGINATION */}
         {totalPages > 1 && (
           <div className="flex items-center justify-between pt-4 border-t border-slate-100">
             <span className="text-xs font-semibold text-slate-500">

@@ -46,7 +46,7 @@ export default function SiswaLayout({
   // Ambil slug halaman dari pathname saat ini
   const currentSlug = pathname.split("/").pop() || "organisasi";
   const activePage =
-    SISWA_PAGES.find((p) => p.slug === currentSlug) || SISWA_PAGES[0];
+    SISWA_PAGES.find((p) => p.slug === currentSlug || pathname.includes(p.slug)) || SISWA_PAGES[0];
 
   const IconHeader = activePage.icon;
 
