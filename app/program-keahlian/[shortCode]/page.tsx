@@ -8,7 +8,7 @@ import {
   LuGraduationCap,
   LuAward,
 } from "react-icons/lu";
-import {JURUSAN_DATA} from "../../lib/data.ts"
+import {JURUSAN_DATA} from "../../lib/data"
 
 export default async function JurusanDetailPage({
   params,
